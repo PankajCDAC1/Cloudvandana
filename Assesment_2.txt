@@ -1,0 +1,29 @@
+<head>
+  <title>Sentence Input</title>
+</head>
+<body>
+  <form>
+    <label for="sentence">Enter a Sentence:</label>
+    <input type="text" id="sentence" name="sentence">
+    <br>
+    <label for="letter">Enter a Letter:</label>
+    <input type="text" id="letter" name="letter">
+    <br><br>
+    <button type="button" onclick="submitForm()">Submit</button>
+  </form> 
+  <p id="result"></p>
+
+  <script>
+    function submitForm() {
+      var sentence = document.getElementById("sentence").value;
+      var letter = document.getElementById("letter").value;
+      var letterIndex = sentence.indexOf(letter);
+      if (letterIndex === -1) {
+        document.getElementById("result").innerHTML = "The letter does not exist in the sentence";
+      } else {
+        document.getElementById("result").innerHTML = sentence.slice(letterIndex + 1);
+      }
+    }
+  </script>
+</body>
+</html>

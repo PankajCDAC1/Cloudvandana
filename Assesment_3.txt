@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class cloudvandana {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Word:-");
+        String str = sc.nextLine();
+        System.out.print("ENTER THE CHARACTER");
+        String ch = sc.nextLine();
+        String arr[] = str.split("");
+        int n = arr.length;
+        int a = str.indexOf(ch);
+        if(str.contains(ch)){
+        for(int i=a+1; i<n; i++) {
+            System.out.print(arr[i] + "");
+        }}
+        else{
+            System.out.print("The letter does not exist in the sentence");
+            }
+        }
+}
+

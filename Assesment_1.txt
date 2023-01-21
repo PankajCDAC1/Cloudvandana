@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    
+    
+    <table>
+      <tr>
+        <th>SL.No.</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>City</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>ABC</td>
+        <td>kumar</td>
+        <td>New Delhi</td>
+        <td>India</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Arvind</td>
+        <td>Bansal</td>
+        <td>Lucknow</td>
+        <td>India</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Bharti</td>
+        <td>Sharma</td>
+        <td>New Delhi</td>
+        <td>India</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Sahil</td>
+        <td>Mangla</td>
+        <td>Panipat</td>
+        <td>India</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Pankaj</td>
+        <td>Aggarwal</td>
+        <td>Sonipat</td>
+        <td>India</td>
+      </tr>
+    </table>
+    
+    <button onclick="addfrom_top()">Add row to top</button>
+    <button onclick="addfrom_bottom()">Add row to bottom</button>
+
+    <script>
+      function addfrom_bottom() {
+        var mytable = document.getElementsByTagName("table")[0];
+        var myrow = mytable.insertRow(-1);
+        var table_cell1 = myrow.insertCell(0);
+        var table_cell2 = myrow.insertCell(1);
+        var table_cell3 = myrow.insertCell(2);
+        var table_cell4 = myrow.insertCell(3);
+        var table_cell5 = myrow.insertCell(4);
+        table_cell1.innerHTML = mytable.rows.length - 1;
+        table_cell2.innerHTML = "SAMPLE 1";
+        table_cell3.innerHTML = "SAMPLE 1";
+        table_cell4.innerHTML = "SAMPLE 1";
+        table_cell5.innerHTML = "SAMPLE 1";
+      }
+      function addfrom_top() {
+        var mytable = document.getElementsByTagName("table")[0];
+        var myrow = mytable.insertRow(1);
+        var table_cell1 = myrow.insertCell(0);
+        var table_cell2 = myrow.insertCell(1);
+        var table_cell3 = myrow.insertCell(2);
+        var table_cell4 = myrow.insertCell(3);
+        var table_cell5 = myrow.insertCell(4);
+        table_cell1.innerHTML = 1;
+        for(var i = 2; i < mytable.rows.length; i++) {
+          mytable.rows[i].cells[0].innerHTML = i;
+        }
+        table_cell2.innerHTML = "SAMPLE 2";
+        table_cell3.innerHTML = "SAMPLE 2";
+        table_cell4.innerHTML = "SAMPLE 2";
+        table_cell5.innerHTML = "SAMPLE 2";
+      }
+    </script>
+    
+  </body>
+</html>
